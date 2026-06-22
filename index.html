@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedCards - Flashcards de Medicina</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>MedCards 🩺</h1>
+        <button id="theme-toggle" onclick="toggleTheme()">Alternar Tema</button>
+    </header>
+
+    <main class="container">
+        
+        <div class="flashcard tema-anatomia" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Anatomia</h3>
+                    <p>Qual nervo é responsável pela inervação motora dos músculos anteriores do braço (ex: Bíceps braquial)?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Nervo Musculocutâneo.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-farmaco" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Farmacologia</h3>
+                    <p>Qual é o principal mecanismo de ação dos Inibidores da ECA (IECA) no tratamento da hipertensão?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Bloqueiam a conversão de Angiotensina I em Angiotensina II, reduzindo a vasoconstrição e a secreção de aldosterona.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-fisiologia" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Fisiologia</h3>
+                    <p>Qual hormônio estimula a produção e liberação de bicarbonato pelo pâncreas para neutralizar o quimo ácido no duodeno?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Secretina.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-patologia" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Patologia</h3>
+                    <p>Que tipo de necrose é classicamente observada em infartos cerebrais e infecções bacterianas do sistema nervoso central?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Necrose de Liquefação.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-semiologia" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Semiologia</h3>
+                    <p>O que indica a presença do Sinal de Blumberg positivo durante o exame físico do abdome?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Irritação peritoneal (comum na Apendicite Aguda).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-criterios" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Critérios Diagnósticos</h3>
+                    <p>Quais são os 3 critérios clínicos que compõem o escore qSOFA para triagem rápida de sepse?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>1. Frequência respiratória ≥ 22 irpm<br>2. Alteração do nível de consciência (Glasgow < 15)<br>3. Pressão arterial sistólica ≤ 100 mmHg</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-pediatria" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Pediatria</h3>
+                    <p>Com quantos meses de idade, teoricamente, espera-se que um lactente consiga sentar-se sem apoio?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Por volta dos 6 a 7 meses.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-dermato" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Dermatologia</h3>
+                    <p>Como é definida a lesão elementar do tipo "Pápula"?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Uma lesão sólida, elevada, circunscrita e menor que 1 cm de diâmetro.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-emergencia" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Emergência</h3>
+                    <p>No protocolo ACLS, quais são os 4 ritmos de Parada Cardiorrespiratória (PCR)?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Chocáveis: TV sem pulso e FV.<br>Não chocáveis: Atividade Elétrica Sem Pulso (AESP) e Assistolia.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-preventiva" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Medicina Preventiva</h3>
+                    <p>Qual é a fórmula utilizada para calcular a Sensibilidade de um teste diagnóstico?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Verdadeiros Positivos / (Verdadeiros Positivos + Falsos Negativos).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-go" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Ginecologia e Obstetrícia</h3>
+                    <p>A partir de quantas semanas de gestação o rastreamento universal do Estreptococo do Grupo B (GBS) deve ser realizado?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Entre 35 e 37 semanas de gestação.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="flashcard tema-cirurgia" onclick="this.classList.toggle('flipped')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <h3>Cirurgia Geral</h3>
+                    <p>Qual é a tríade clínica clássica da Obstrução Intestinal?</p>
+                    <span class="hint">Clique para virar</span>
+                </div>
+                <div class="card-back">
+                    <h3>Resposta</h3>
+                    <p>Dor abdominal em cólica, distensão abdominal e parada de eliminação de gases e fezes.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+    </script>
+</body>
+</html>
