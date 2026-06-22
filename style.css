@@ -1,0 +1,214 @@
+/* PALETA DE CORES - TEMA CLARO */
+:root {
+    --bg-color: #f7f9fa;
+    --text-color: #2d3748;
+    --header-bg: #1a202c;
+    --header-text: #ffffff;
+    --card-front-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.08);
+
+    /* Cores dos Temas (Versão Clara) */
+    --cor-anatomia: #ff65a3;    /* Rosa */
+    --cor-farmaco: #3b82f6;      /* Azul */
+    --cor-fisiologia: #ef4444;  /* Vermelho */
+    --cor-patologia: #f59e0b;   /* Amarelo/Ouro */
+    --cor-semiologia: #f97316;  /* Laranja */
+    --cor-criterios: #8b5cf6;   /* Roxo */
+    --cor-pediatria: #10b981;   /* Verde */
+    --cor-dermato: #06b6d4;     /* Ciano */
+    --cor-emergencia: #991b1b;  /* Vermelho Escuro */
+    --cor-preventiva: #6b7280;  /* Cinza */
+    --cor-go: #0d9488;          /* Teal */
+    --cor-cirurgia: #0f766e;    /* Verde Marinho */
+    
+    --text-back: #ffffff;
+}
+
+/* PALETA DE CORES - TEMA ESCURO */
+body.dark-theme {
+    --bg-color: #0f172a;
+    --text-color: #cbd5e1;
+    --header-bg: #1e293b;
+    --header-text: #38bdf8;
+    --card-front-bg: #1e293b;
+    --shadow: rgba(0, 0, 0, 0.4);
+
+    /* Cores dos Temas Adaptadas (Versão Escura - Tons mais fechados) */
+    --cor-anatomia: #be185d;    /* Rosa Escuro */
+    --cor-farmaco: #1d4ed8;      /* Azul Escuro */
+    --cor-fisiologia: #b91c1c;  /* Vermelho Escuro */
+    --cor-patologia: #b45309;   /* Laranja/Amarelo Queimado */
+    --cor-semiologia: #c2410c;  /* Laranja Escuro */
+    --cor-criterios: #6d28d9;   /* Roxo Escuro */
+    --cor-pediatria: #047857;   /* Verde Escuro */
+    --cor-dermato: #0e7490;     /* Ciano Escuro */
+    --cor-emergencia: #7f1d1d;  /* Vinho */
+    --cor-preventiva: #4b5563;  /* Cinza Escuro */
+    --cor-go: #115e59;          /* Teal Escuro */
+    --cor-cirurgia: #134e4a;    /* Verde Bem Escuro */
+}
+
+/* ESTILOS GERAIS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s, color 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    width: 100%;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: background-color 0.4s;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+#theme-toggle {
+    background-color: transparent;
+    color: var(--header-text);
+    border: 2px solid var(--header-text);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--header-text);
+    color: var(--header-bg);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    padding: 40px 20px;
+    max-width: 1300px;
+}
+
+/* ESTRUTURA DOS FLASHCARDS */
+.flashcard {
+    width: 280px;
+    height: 220px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px var(--shadow);
+    border-radius: 12px;
+}
+
+.flashcard.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* Estilo da Frente */
+.card-front {
+    background-color: var(--card-front-bg);
+    color: var(--text-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-front h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding: 4px 12px;
+    border-radius: 15px;
+    color: #fff;
+}
+
+.card-front p {
+    font-size: 1rem;
+    font-weight: 500;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hint {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+/* Estilo do Verso */
+.card-back {
+    color: var(--text-back);
+    transform: rotateY(180deg);
+    justify-content: center;
+}
+
+.card-back h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+.card-back p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* MAPEAMENTO DE CORES DOS TEMAS */
+/* O topo do card frontal recebe a cor, e o verso inteiro assume a cor do tema */
+
+.tema-anatomia .card-front h3, .tema-anatomia .card-back { background-color: var(--cor-anatomia); }
+.tema-farmaco .card-front h3, .tema-farmaco .card-back { background-color: var(--cor-farmaco); }
+.tema-fisiologia .card-front h3, .tema-fisiologia .card-back { background-color: var(--cor-fisiologia); }
+.tema-patologia .card-front h3, .tema-patologia .card-back { background-color: var(--cor-patologia); }
+.tema-semiologia .card-front h3, .tema-semiologia .card-back { background-color: var(--cor-semiologia); }
+.tema-criterios .card-front h3, .tema-criterios .card-back { background-color: var(--cor-criterios); }
+.tema-pediatria .card-front h3, .tema-pediatria .card-back { background-color: var(--cor-pediatria); }
+.tema-dermato .card-front h3, .tema-dermato .card-back { background-color: var(--cor-dermato); }
+.tema-emergencia .card-front h3, .tema-emergencia .card-back { background-color: var(--cor-emergencia); }
+.tema-preventiva .card-front h3, .tema-preventiva .card-back { background-color: var(--cor-preventiva); }
+.tema-go .card-front h3, .tema-go .card-back { background-color: var(--cor-go); }
+.tema-cirurgia .card-front h3, .tema-cirurgia .card-back { background-color: var(--cor-cirurgia); }
